@@ -1,0 +1,33 @@
+﻿<Page
+    x:Class="ExamUW.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ExamUW"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <StackPanel Orientation="Vertical">
+            <TextBlock HorizontalAlignment="Left" FontSize="30">Contact</TextBlock>
+            <TextBox x:ConnectionId='2' x:Name="Name" PlaceholderText="Name"></TextBox>
+            <TextBox x:ConnectionId='3' x:Name="Phone" PlaceholderText="Phone"></TextBox>
+            <Button x:ConnectionId='4'                     Content="Add Contact"></Button>
+            <TextBox x:ConnectionId='5' x:Name="KeyWord" PlaceholderText="Name"></TextBox>
+            <TextBox x:ConnectionId='6' x:Name="PhoneNumber" PlaceholderText="Phone"></TextBox>
+            <Button x:ConnectionId='7'                        Content="Search Contact"></Button>
+            <ListView x:ConnectionId='8' x:Name="ListViewContact" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock  x:Name="Name"  Text="{Binding Name}"></TextBlock>
+                            <TextBlock  x:Name="Phone" Text="{Binding Phone}"></TextBlock>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackPanel>
+    </Grid>
+</Page>
+
